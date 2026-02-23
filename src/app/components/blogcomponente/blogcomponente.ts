@@ -40,4 +40,47 @@ export class Blogcomponente {
     fecha: '',
     autor: '',
   };
+
+  publicar() {
+
+  if (
+    !this.nuevaNoticia.titulo?.trim() ||
+    !this.nuevaNoticia.autor?.trim() ||
+    !this.nuevaNoticia.fecha?.trim() ||
+    !this.nuevaNoticia.texto?.trim() ||
+    !this.nuevaNoticia.imagen?.trim()
+  ) {
+    alert('Todos los campos son obligatorios');
+    return;
+  }
+
+  const noticiaInsertar: Noticia = {
+    ...this.nuevaNoticia,
+    titulo: this.nuevaNoticia.titulo.trim(),
+    autor: this.nuevaNoticia.autor.trim(),
+    texto: this.nuevaNoticia.texto.trim(),
+    imagen: this.nuevaNoticia.imagen.trim(),
+  };
+
+  this.noticias.push(noticiaInsertar);
+
+  this.nuevaNoticia = {
+    titulo: '',
+    imagen: '',
+    texto: '',
+    fecha: '',
+    autor: ''
+  };
+}
+
+limpiar() {
+  this.nuevaNoticia = {
+    titulo: '',
+    imagen: '',
+    texto: '',
+    fecha: '',
+    autor: ''
+  };
+}
+  
 }

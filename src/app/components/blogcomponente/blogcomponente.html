@@ -29,7 +29,6 @@
     <aside class="panel panel--form">
       <h2 class="panel__title">Nueva noticia</h2>
 
-      <!-- (Solo maqueta; luego haremos validación y submit) -->
       <form class="form" autocomplete="off">
         <label class="field">
           <span class="field__label">Título</span>
@@ -45,7 +44,7 @@
 
         <label class="field">
           <span class="field__label">Fecha</span>
-          <input class="field__input" type="date" [(ngModel)]="nuevaNoticia.fecha" name="fecha" />/>
+          <input class="field__input" type="date" [(ngModel)]="nuevaNoticia.fecha" name="fecha" />
           <small class="field__hint">Obligatorio</small>
         </label>
 
@@ -62,8 +61,8 @@
         </label>
 
         <div class="form__actions">
-          <button class="btn" type="button">Publicar</button>
-          <button class="btn btn--ghost" type="button">Limpiar</button>
+            <button class="btn" type="button" (click)="publicar()">Publicar </button>
+            <button class="btn btn--ghost" type="button" (click)="limpiar()"> Limpiar </button>
         </div>
       </form>
     </aside>

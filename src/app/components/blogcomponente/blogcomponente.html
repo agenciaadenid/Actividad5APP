@@ -1,1 +1,82 @@
-<p>blogcomponente works!</p>
+<section class="blog">
+  <header class="blog__header">
+    <h1 class="blog__title">Blog</h1>
+    <p class="blog__subtitle">Sistema de Blogging en Angular</p>
+  </header>
+
+  <div class="blog__grid">
+    <!-- LISTADO -->
+    <main class="panel">
+      <h2 class="panel__title">Listado de noticias</h2>
+
+      <div class="news-list">
+        <!-- (De momento maqueta fija; luego lo pintaremos con *ngFor / @for) -->
+        <article class="news">
+          <h3 class="news__title">Título de ejemplo</h3>
+          <p class="news__meta">Autor · 01/01/2026</p>
+          <p class="news__text">
+            Este es un texto de ejemplo. En el siguiente criterio esto vendrá de un array.
+          </p>
+          <div class="news__tags">
+            <span class="tag">Angular</span>
+            <span class="tag">Front</span>
+          </div>
+        </article>
+
+        <article class="news">
+          <h3 class="news__title">Otra noticia de ejemplo</h3>
+          <p class="news__meta">Autor · 02/01/2026</p>
+          <p class="news__text">
+            Más contenido de ejemplo para ver el layout. Luego lo conectamos al array.
+          </p>
+          <div class="news__tags">
+            <span class="tag">TypeScript</span>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <!-- FORMULARIO -->
+    <aside class="panel panel--form">
+      <h2 class="panel__title">Nueva noticia</h2>
+
+      <!-- (Solo maqueta; luego haremos validación y submit) -->
+      <form class="form" autocomplete="off">
+        <label class="field">
+          <span class="field__label">Título</span>
+          <input class="field__input" type="text" placeholder="Ej: Angular 18 y Standalone" />
+          <small class="field__hint">Obligatorio</small>
+        </label>
+
+        <label class="field">
+          <span class="field__label">Autor</span>
+          <input class="field__input" type="text" placeholder="Ej: Suso" />
+          <small class="field__hint">Obligatorio</small>
+        </label>
+
+        <label class="field">
+          <span class="field__label">Fecha</span>
+          <input class="field__input" type="date" />
+          <small class="field__hint">Obligatorio</small>
+        </label>
+
+        <label class="field">
+          <span class="field__label">Contenido</span>
+          <textarea class="field__input field__input--textarea" rows="5" placeholder="Escribe aquí la noticia..."></textarea>
+          <small class="field__hint">Obligatorio</small>
+        </label>
+
+        <label class="field">
+          <span class="field__label">Tags (separados por coma)</span>
+          <input class="field__input" type="text" placeholder="angular, css, componentes" />
+          <small class="field__hint">Opcional</small>
+        </label>
+
+        <div class="form__actions">
+          <button class="btn" type="button">Publicar</button>
+          <button class="btn btn--ghost" type="button">Limpiar</button>
+        </div>
+      </form>
+    </aside>
+  </div>
+</section>

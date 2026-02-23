@@ -1,0 +1,167 @@
+:host {
+  display: block;
+  padding: 24px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.blog {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.blog__header {
+  margin-bottom: 18px;
+}
+
+.blog__title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.blog__subtitle {
+  margin: 6px 0 0;
+  color: #475569;
+  font-size: 14px;
+}
+
+.blog__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.panel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+
+.panel__title {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.news-list {
+  display: grid;
+  gap: 12px;
+}
+
+.news {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px;
+  background: #fff;
+}
+
+.news__title {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.news__meta {
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.news__text {
+  margin: 0 0 10px;
+  color: #334155;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.news__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  color: #3730a3;
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field__label {
+  font-size: 12px;
+  color: #475569;
+  font-weight: 700;
+}
+
+.field__input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 12px;
+  outline: none;
+  font-size: 14px;
+}
+
+.field__input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+.field__input--textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.field__hint {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.form__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.btn {
+  border: 1px solid #6366f1;
+  background: #6366f1;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: #6366f1;
+}
+
+.btn:hover {
+  filter: brightness(0.98);
+}
+
+@media (max-width: 900px) {
+  .blog__grid {
+    grid-template-columns: 1fr;
+  }
+}

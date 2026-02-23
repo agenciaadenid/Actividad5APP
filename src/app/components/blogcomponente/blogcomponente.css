@@ -1,3 +1,6 @@
+
+* { box-sizing: border-box; }
+
 :host {
   display: block;
   padding: 24px;
@@ -27,19 +30,32 @@
   font-size: 14px;
 }
 
+
 .blog__grid {
-  display: grid;
-  grid-template-columns: 1.4fr 0.8fr;
+  display: flex;
   gap: 18px;
-  align-items: start;
+  align-items: flex-start;
 }
 
+
+.blog__grid > main.panel {
+  flex: 1 1 0;
+  min-width: 0; 
+}
+
+.blog__grid > aside.panel--form {
+  flex: 0 0 380px; 
+  min-width: 0;
+}
+
+/* Paneles */
 .panel {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 16px;
   box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+  overflow: hidden; 
 }
 
 .panel__title {
@@ -48,8 +64,10 @@
   font-weight: 700;
 }
 
+/* Listado noticias */
 .news-list {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
 }
 
@@ -79,6 +97,16 @@
   font-size: 14px;
 }
 
+.news__image {
+  width: 100%;
+  height: 180px;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 10px 0 10px;
+  border: 1px solid #e2e8f0;
+}
+
 .news__tags {
   display: flex;
   flex-wrap: wrap;
@@ -94,14 +122,18 @@
   color: #3730a3;
 }
 
+/* Formulario */
 .form {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
 }
 
 .field {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 6px;
+  min-width: 0;
 }
 
 .field__label {
@@ -110,13 +142,18 @@
   font-weight: 700;
 }
 
+/* Anti-desbordes de inputs/textarea */
 .field__input {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  display: block;
   border: 1px solid #cbd5e1;
   border-radius: 10px;
   padding: 10px 12px;
   outline: none;
   font-size: 14px;
+  background: #fff;
 }
 
 .field__input:focus {
@@ -126,7 +163,7 @@
 
 .field__input--textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 140px;
 }
 
 .field__hint {
@@ -134,25 +171,13 @@
   color: #94a3b8;
 }
 
+/* Botones */
 .form__actions {
   display: flex;
   gap: 10px;
   margin-top: 6px;
+  flex-wrap: wrap; 
 }
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  display: block;
-}
-
-.form-card,
-.form-group {
-  min-width: 0;
-}
-
 
 .btn {
   border: 1px solid #6366f1;
@@ -174,8 +199,14 @@
   filter: brightness(0.98);
 }
 
+/* Responsive */
 @media (max-width: 900px) {
   .blog__grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .blog__grid > aside.panel--form {
+    flex: 1 1 auto;
+    width: 100%;
   }
 }

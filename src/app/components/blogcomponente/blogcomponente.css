@@ -140,6 +140,20 @@
   margin-top: 6px;
 }
 
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+.form-card,
+.form-group {
+  min-width: 0;
+}
+
+
 .btn {
   border: 1px solid #6366f1;
   background: #6366f1;

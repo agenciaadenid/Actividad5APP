@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 interface Noticia {
   titulo: string;
@@ -6,13 +7,12 @@ interface Noticia {
   texto: string; 
   fecha: string; 
   autor: string;
-  tags: string [];
 }
 
 @Component({
   selector: 'app-blogcomponente',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './blogcomponente.html',
   styleUrl: './blogcomponente.css',
 })
@@ -24,7 +24,6 @@ export class Blogcomponente {
     texto: 'Qué significa ser therian, por qué surge el término y cómo se vive en comunidades online.',
     fecha: '2026-02-23',
     autor: 'Suso Trillo',
-    tags: ['Therian', 'Identidad', 'Comunidad']
   },
   {
     titulo: 'Oriol Cardona brilla en JJOO',
@@ -32,8 +31,13 @@ export class Blogcomponente {
     texto: 'Gran actuación y regularidad en pruebas de invierno: claves de su rendimiento y expectativas.',
     fecha: '2026-02-23',
     autor: 'Suso Trillo',
-    tags: ['JJOO', 'Invierno', 'Esquí']
   }
 ];
-
+  nuevaNoticia: Noticia = {
+    titulo: '',
+    imagen: '',
+    texto: '',
+    fecha: '',
+    autor: '',
+  };
 }

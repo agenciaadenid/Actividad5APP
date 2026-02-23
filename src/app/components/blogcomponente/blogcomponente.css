@@ -116,20 +116,6 @@
   margin-bottom: 10px;
 }
 
-.news__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.tag {
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: #eef2ff;
-  border: 1px solid #c7d2fe;
-  color: #3730a3;
-}
 
 /* Formulario */
 .form {

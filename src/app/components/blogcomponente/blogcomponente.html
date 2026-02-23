@@ -20,12 +20,6 @@
       <p class="news__text">
         {{ n.texto }}
       </p>
-
-      <div class="news__tags">
-        @for (t of n.tags; track t) {
-          <span class="tag">{{ t }}</span>
-        }
-      </div>
     </article>
   }
 </div>
@@ -39,39 +33,32 @@
       <form class="form" autocomplete="off">
         <label class="field">
           <span class="field__label">Título</span>
-          <input class="field__input" type="text" placeholder="Ej: Therian: identidad y comunidad" />
+          <input class="field__input" type="text" placeholder="Ej: Therian: identidad y comunidad" [(ngModel)]="nuevaNoticia.titulo" name="titulo" />
           <small class="field__hint">Obligatorio</small>
         </label>
 
         <label class="field">
           <span class="field__label">Autor</span>
-          <input class="field__input" type="text" placeholder="Ej: Suso" />
+          <input class="field__input" type="text" placeholder="Ej: Suso" [(ngModel)]="nuevaNoticia.autor" name="autor" />
           <small class="field__hint">Obligatorio</small>
         </label>
 
         <label class="field">
           <span class="field__label">Fecha</span>
-          <input class="field__input" type="date" />
+          <input class="field__input" type="date" [(ngModel)]="nuevaNoticia.fecha" name="fecha" />/>
           <small class="field__hint">Obligatorio</small>
         </label>
 
        <label class="field">
         <span class="field__label">Imagen (URL)</span>
-        <input class="field__input" type="url"
-            placeholder="https://ejemplo.com/imagen.jpg"/>
+        <input class="field__input" type="url" placeholder="https://ejemplo.com/imagen.jpg" [(ngModel)]="nuevaNoticia.imagen" name="imagen" />
         <small class="field__hint">Obligatorio</small>
         </label> 
 
         <label class="field">
           <span class="field__label">Contenido</span>
-          <textarea class="field__input field__input--textarea" rows="5" placeholder="Escribe aquí la noticia..."></textarea>
+          <textarea class="field__input field__input--textarea" rows="5" placeholder="Escribe aquí la noticia..."   [(ngModel)]="nuevaNoticia.texto" name="texto"></textarea>
           <small class="field__hint">Obligatorio</small>
-        </label>
-
-        <label class="field">
-          <span class="field__label">Tags (separados por coma)</span>
-          <input class="field__input" type="text" placeholder="therian, identidad, comunidad" />
-          <small class="field__hint">Opcional</small>
         </label>
 
         <div class="form__actions">

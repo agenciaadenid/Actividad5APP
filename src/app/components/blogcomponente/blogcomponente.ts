@@ -6,7 +6,7 @@ interface Noticia {
   texto: string; 
   fecha: string; 
   autor: string;
-  tags: string []
+  tags: string [];
 }
 
 @Component({
@@ -35,7 +35,5 @@ export class Blogcomponente {
     tags: ['JJOO', 'Invierno', 'Esquí']
   }
 ];
-ngOnInit() {
-  console.log(this.noticias);
-}
+
 }

@@ -10,39 +10,25 @@
       <h2 class="panel__title">Listado de noticias</h2>
 
       <div class="news-list">
-        <!-- (De momento maqueta fija; luego lo pintaremos con *ngFor / @for) -->
-        <article class="news">
-          <h3 class="news__title">Therian: identidad y comunidad</h3>
-          <p class="news__meta">Suso Trillo · 23/02/2026</p>
-          <img class="news__image"
-            src="https://www.hola.com/horizon/landscape/1176fdb55cff-gettyimages-2185542360.jpg"
-            alt="Therian: identidad y comunidad"/>           
-          <p class="news__text">
-            Qué significa ser therian, por qué surge el término y cómo se vive en comunidades online.
-          </p>
-          <div class="news__tags">
-            <span class="tag">Therian</span>
-            <span class="tag">Identidad</span>
-            <span class="tag">Comunidad</span>
-          </div>
-        </article>
+  @for (n of noticias; track n.titulo) {
+    <article class="news">
+      <img class="news__img" [src]="n.imagen" [alt]="n.titulo" />
 
-        <article class="news">
-          <h3 class="news__title">Oriol Cardona brilla en JJOO</h3>
-          <p class="news__meta">Suso Trillo · 23/02/2026</p>
-          <img class="news__image"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLE0PAuuzH2wBUAzi8LAYK64g_mIs2LBrvjg&s"
-            alt="Oriol Cardona brilla en JJOO" />
-          <p class="news__text">
-            Gran actuación y regularidad en pruebas de invierno: claves de su rendimiento y expectativas.
-          </p>
-          <div class="news__tags">
-            <span class="tag">JJOO</span>
-            <span class="tag">Invierno</span>
-            <span class="tag">Esquí</span>
-          </div>
-        </article>
+      <h3 class="news__title">{{ n.titulo }}</h3>
+      <p class="news__meta">{{ n.autor }} · {{ n.fecha }}</p>
+
+      <p class="news__text">
+        {{ n.texto }}
+      </p>
+
+      <div class="news__tags">
+        @for (t of n.tags; track t) {
+          <span class="tag">{{ t }}</span>
+        }
       </div>
+    </article>
+  }
+</div>
     </main>
 
     <!-- FORMULARIO -->
